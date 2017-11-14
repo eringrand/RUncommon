@@ -1,0 +1,23 @@
+Package: uncommonpackage
+Title: Erin's Personal Package
+Version: 0.0.1.9000
+Authors@R:  c(person("Erin", "Grand", email = "eringrand@gmail.com", role = "cre"))
+Description: Supplies common functions so that I do not have to rewrite them all the time
+Depends: R (>= 3.3.1)
+Imports:
+    dplyr,
+    tidyr,
+    purrr,
+    stringr,
+    janitor,
+    tibble,
+    readxl,
+    ggplot2
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown,
+    assertr
+VignetteBuilder: knitr
