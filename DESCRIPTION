@@ -1,4 +1,4 @@
-Package: uncommonpackage
+Package: uncommonR
 Title: Erin's Personal Package
 Version: 0.0.1.9000
 Authors@R:  c(person("Erin", "Grand", email = "eringrand@gmail.com", role = "cre"))
