@@ -1,7 +1,7 @@
 #' uncommonR is my personal supply of functions that I use often enough not to want to rewrite everytime
 #'
 #' @docType package
-#' @name eringrand
+#' @name uncommonR
 #' @importFrom dplyr %>%
 #' @keywords internal
 NULL
