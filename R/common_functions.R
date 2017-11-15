@@ -26,7 +26,7 @@ read_clean_data <- function(file, sheetname, ...) {
 #' len(x)
 
 len <- function(x) {
-  return(length(x))
+  length(x)
 }
 
 #' @title tochar
@@ -92,6 +92,7 @@ yes_no <- function(x) {
 #' @description change first_name last_name, to last_name, first_name
 #' Does not work with two part last names as it assumes only one space
 #' between the first and last name.
+#' @param name The full name of someone in the form of First Name, Last Name. A character.
 change_firstlast_to_lastfirst <- function(name) {
   name_list <- str_split(name, pattern = " ")[[1]]
   x <- ""
