@@ -1,5 +1,5 @@
 ---
-title: "uncommonR"
+title: "RUncommon"
 output: github_document
 ---
 
@@ -8,8 +8,8 @@ A package of personal functions I use at work or in my personal projects. The fu
 To download this package for your own use, type.
 
 ```r
-devtools::install_github("eringrand/uncommonR", dependencies = FALSE)
-library(uncommonR)
+devtools::install_github("eringrand/RUncommon", dependencies = FALSE)
+library(RUncommon)
 ```
 
-```uncommonR``` requires R version >= 3.4.0.
+```RUncommon``` requires R version >= 3.4.0.
