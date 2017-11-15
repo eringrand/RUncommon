@@ -11,5 +11,3 @@ To download this package for your own use, type.
 devtools::install_github("eringrand/RUncommon", dependencies = FALSE)
 library(RUncommon)
 ```
-
-```RUncommon``` requires R version >= 3.4.0.
