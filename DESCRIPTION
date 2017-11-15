@@ -1,4 +1,4 @@
-Package: uncommonR
+Package: RUncommon
 Title: Erin's Personal Package
 Version: 0.0.1.9000
 Authors@R:  c(person("Erin", "Grand", email = "eringrand@gmail.com", role = "cre"))
@@ -19,5 +19,7 @@ LazyData: true
 RoxygenNote: 6.0.1
 Suggests: knitr,
     rmarkdown,
-    assertr
+    assertr,
+    httr,
+    jsonlite
 VignetteBuilder: knitr

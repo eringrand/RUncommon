@@ -4,7 +4,7 @@
 \alias{sy_number}
 \title{school_year}
 \usage{
-sy_number(school_year)
+sy_number(school_year, before_2000 = FALSE)
 }
 \description{
 Takes a value in the form SY16-17 or 2016-17

@@ -7,5 +7,6 @@
 colorgorical(n = 10)
 }
 \description{
-uses Colorgoical to create color paletes that work well
+uses Colorgoical to create color paletes that work well.
+Requires httr and jsonlite packages.
 }

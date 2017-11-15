@@ -2,10 +2,12 @@
 % Please edit documentation in R/common_functions.R
 \name{change_firstlast_to_lastfirst}
 \alias{change_firstlast_to_lastfirst}
-\title{change first_name last_name, to last_name, first_name}
+\title{change_firstlast_to_lastfirst}
 \usage{
 change_firstlast_to_lastfirst(name)
 }
 \description{
 change first_name last_name, to last_name, first_name
+Does not work with two part last names as it assumes only one space
+between the first and last name.
 }

@@ -38,7 +38,8 @@ tochar <- function(x) {
 
 
 #' @title colorgorical
-#' @description uses Colorgoical to create color paletes that work well
+#' @description uses Colorgoical to create color paletes that work well.
+#' Requires httr and jsonlite packages.
 colorgorical <- function(n = 10) {
   post_body <- jsonlite::toJSON(
     auto_unbox = TRUE,
@@ -87,7 +88,10 @@ yes_no <- function(x) {
 }
 
 
-#' change first_name last_name, to last_name, first_name
+#' @title change_firstlast_to_lastfirst
+#' @description change first_name last_name, to last_name, first_name
+#' Does not work with two part last names as it assumes only one space
+#' between the first and last name.
 change_firstlast_to_lastfirst <- function(name) {
   name_list <- str_split(name, pattern = " ")[[1]]
   x <- ""
