@@ -1,4 +1,5 @@
 #' @title stat_smooth_func
+#' @export
 #' @examples
 #' iris %>%
 #'    ggplot(aes(x = Sepal.Width, y = Petal.Width, color = Species)) +

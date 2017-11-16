@@ -1,18 +1,22 @@
 #' @title Root Mean Squared Error
 #' @param pred vector of predictions
 #' @param actual vector of actual values
+#' @export
 
 rmse <- function(pred, actual) {
   return(sqrt(mean((pred - actual) ^ 2)))
 }
 
-# Mean Absolute Percent Error
+#' Mean Absolute Percent Error
+# @export
 mape <- function(pred, actual) {
   mape <- sum(abs(pred - actual)) / sum(actual)
   return(mape)
 }
 
 #' This calculates the gini coeff
+#' @export
+#'
 mygini <- function(pred, actual) {
   w <- rep(1, length(pred))
   v <- data.frame(o = pred, p = pred, a = actual, w = w)
@@ -25,6 +29,8 @@ mygini <- function(pred, actual) {
 }
 
 #' True Positive Rate
+#' @export
+#'
 tpr <- function(pred, actual) {
   smry_table <- data.frame(table(pred, actual))
   num <- smry_table$Freq[smry_table$pred == 1 & smry_table$actual == 1]
@@ -37,6 +43,7 @@ tpr <- function(pred, actual) {
 }
 
 #' True Negative Rate
+#' @export
 tnr <- function(pred, actual) {
   smry_table <- data.frame(table(pred, actual))
   num <- smry_table$Freq[smry_table$pred == 0 & smry_table$actual == 0]
@@ -49,6 +56,7 @@ tnr <- function(pred, actual) {
 }
 
 #' False Positive Rate
+#' @export
 fpr <- function(pred, actual) {
   smry_table <- data.frame(table(pred, actual))
   num <- smry_table$Freq[smry_table$pred == 1 & smry_table$actual == 0]
@@ -61,6 +69,7 @@ fpr <- function(pred, actual) {
 }
 
 #' False Negative Rate
+#' @export
 fnr <- function(pred, actual) {
   smry_table <- data.frame(table(pred, actual))
   num <- smry_table$Freq[smry_table$pred == 0 & smry_table$actual == 1]
@@ -73,6 +82,7 @@ fnr <- function(pred, actual) {
 }
 
 #' @title Classification accuracy
+#' @export
 cls_acc <- function(pred, actual) {
   out <- sum(abs(pred - actual)) / length(actual)
   out <- round((1 - out) * 100, 2)

@@ -6,8 +6,8 @@
 #' @param ... Additional parameters to pass to readxl
 #'
 #' @examples
-#'
 #' read_clean_data(filelocation, 1)
+#' @export
 
 read_clean_data <- function(file, sheetname, ...) {
   readxl::read_excel(file, sheet = sheetname, na = "", ...) %>%
@@ -24,6 +24,7 @@ read_clean_data <- function(file, sheetname, ...) {
 #' @examples
 #' x <- 1:5
 #' len(x)
+#' @export
 
 len <- function(x) {
   length(x)
@@ -31,6 +32,8 @@ len <- function(x) {
 
 #' @title tochar
 #' @description Turn factor vector into a character vector
+#' @export
+
 tochar <- function(x) {
   as.character(levels(x)[x])
 }
@@ -40,6 +43,7 @@ tochar <- function(x) {
 #' @title colorgorical
 #' @description uses Colorgoical to create color paletes that work well.
 #' Requires httr and jsonlite packages.
+#'  @export
 colorgorical <- function(n = 10) {
   post_body <- jsonlite::toJSON(
     auto_unbox = TRUE,
@@ -70,6 +74,7 @@ colorgorical <- function(n = 10) {
 #' Cohort Tag
 #' @param grade Enrolled grade of the student
 #' @param school_year School year either in 20XX-YY or 20XX format.
+#' @export
 
 cohort <- function(grade, school_year="") {
   years_to_grade <- 12 - as.numeric(grade)
@@ -83,6 +88,7 @@ cohort <- function(grade, school_year="") {
 }
 
 #' yes_no
+#' @export
 yes_no <- function(x) {
   dplyr::if_else(x %in% 1, "Yes", "No")
 }
@@ -93,6 +99,8 @@ yes_no <- function(x) {
 #' Does not work with two part last names as it assumes only one space
 #' between the first and last name.
 #' @param name The full name of someone in the form of First Name, Last Name. A character.
+#' @export
+
 change_firstlast_to_lastfirst <- function(name) {
   name_list <- str_split(name, pattern = " ")[[1]]
   x <- ""

@@ -1,7 +1,7 @@
 #' @title school_year
 #' @description Takes a value in the form SY16-17 or 2016-17
 #' and converts to a number representing the second/spring year.
-#'
+#' @export
 #' @examples
 #'  sy_number("SY16-17")
 

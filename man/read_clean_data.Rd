@@ -17,6 +17,5 @@ read_clean_data(file, sheetname, ...)
 Reads in clean data from excel using janitor package and readxl
 }
 \examples{
-
 read_clean_data(filelocation, 1)
 }

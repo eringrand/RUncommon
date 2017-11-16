@@ -6,7 +6,7 @@
 #'  adds confidence intervals for all coefficients and OR's.
 #'
 #' This version accommodates multiple regression parameters
-#
+#' @export
 
 logistic.regression.or.ci <- function(regress.out, level=0.95) {
   usual.output <- summary(regress.out)
