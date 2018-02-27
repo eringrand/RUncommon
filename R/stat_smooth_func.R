@@ -1,6 +1,8 @@
 #' @title stat_smooth_func
 #' @export
 #' @examples
+#' library(dplyr)
+#' library(ggplot2)
 #' iris %>%
 #'    ggplot(aes(x = Sepal.Width, y = Petal.Width, color = Species)) +
 #'    geom_point() +

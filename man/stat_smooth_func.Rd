@@ -11,6 +11,8 @@ stat_smooth_func(mapping = NULL, data = NULL, geom = "smooth",
   inherit.aes = TRUE, xpos = NULL, ypos = NULL)
 }
 \examples{
+library(dplyr)
+library(ggplot2)
 iris \%>\%
    ggplot(aes(x = Sepal.Width, y = Petal.Width, color = Species)) +
    geom_point() +
