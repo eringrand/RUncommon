@@ -116,7 +116,7 @@ StatSmoothFunc <- ggplot2::ggproto(
     #                       b = format(coef(m)[2], digits = 3),
     #                       r2 = format(summary(m)$r.squared, digits = 3)))
     eq <- substitute(
-      r2,
+      italic(r)^2 ~  "=" ~ r2,
       list(r2 = format(summary(m)$r.squared, digits = 3))
     )
     func_string <- as.character(as.expression(eq))
