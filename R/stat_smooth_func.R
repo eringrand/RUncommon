@@ -1,6 +1,7 @@
 #' @title stat_smooth_func
 #' @export
 #' @examples
+#' mostly taken from https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
 #' library(dplyr)
 #' library(ggplot2)
 #' iris %>%
