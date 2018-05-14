@@ -13,3 +13,17 @@ sy_number <- function(school_year, before_2000 = FALSE) {
     1900 + as.numeric(stringr::str_sub(school_year, -2))
   }
 }
+
+
+
+#' @title change_school_year
+#' @description Takes a value in the form 2016-2017
+#' and converts to SY16-17
+#' @export
+#' @examples
+#'  change_school_year("2014-2015")
+change_school_year <- function(school_year){
+  first_year <- str_sub(school_year, 1, 4)
+  second_year <- str_sub(school_year, -2, -1)
+  paste0(first_year, "-", second_year)
+}
