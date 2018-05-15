@@ -18,7 +18,7 @@ sy_number <- function(school_year, before_2000 = FALSE) {
 
 #' @title change_school_year
 #' @description Takes a value in the form 2016-2017
-#' and converts to SY16-17
+#' and converts to 2016-17
 #' @export
 #' @examples
 #'  change_school_year("2014-2015")

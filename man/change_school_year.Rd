@@ -8,7 +8,7 @@ change_school_year(school_year)
 }
 \description{
 Takes a value in the form 2016-2017
-and converts to SY16-17
+and converts to 2016-17
 }
 \examples{
  change_school_year("2014-2015")
