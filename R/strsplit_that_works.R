@@ -19,5 +19,3 @@ strsplit_that_works <- function(cell, entity_requested, split = "_") {
   y <- x[[1]][entity_requested]
   return(y)
 }
-
-
