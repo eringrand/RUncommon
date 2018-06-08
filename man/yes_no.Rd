@@ -7,5 +7,5 @@
 yes_no(x)
 }
 \description{
-yes_no
+Changes all 1's to "Yes" and all 0's to "No." Does not change NAs or other values.
 }

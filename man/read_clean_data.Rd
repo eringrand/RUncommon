@@ -15,7 +15,11 @@ read_clean_data(file, sheetname, ...)
 }
 \description{
 Reads in clean data from excel using janitor package and readxl
+Remove empty columns, rows and then clean the names of the remaining columns.
 }
 \examples{
-read_clean_data(filelocation, 1)
+\dontrun{
+library(RUncommon)
+/read_clean_data(filelocation, 1)
+}
 }

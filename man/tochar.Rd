@@ -7,5 +7,5 @@
 tochar(x)
 }
 \description{
-Turn factor vector into a character vector
+Turns factor vector into a character vector - without have numbered levels.
 }

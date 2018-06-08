@@ -14,3 +14,8 @@ cohort(grade, school_year = "")
 \description{
 Cohort Tag
 }
+\examples{
+library(RUncommon)
+cohort(10)
+cohort(10, 2008)
+}
