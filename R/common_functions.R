@@ -1,5 +1,6 @@
 #' @title read_clean_data
 #' @description Reads in clean data from excel using janitor package and readxl
+#' Remove empty columns, rows and then clean the names of the remaining columns.
 #'
 #' @param file The location of the file you are using.
 #' @param sheename The name of number of the sheet (as in readxl)
@@ -11,14 +12,14 @@
 
 read_clean_data <- function(file, sheetname, ...) {
   readxl::read_excel(file, sheet = sheetname, na = "", ...) %>%
-    janitor::remove_empty_cols() %>%
-    janitor::remove_empty_rows() %>%
+    janitor::remove_empty("cols") %>%
+    janitor::remove_empty("rows") %>%
     janitor::clean_names()
 }
 
 
 #' @title len
-#' @description For consistincy between Python and R.  Returns the length of a vector
+#' @description For consistincy between Python and R.  Returns the length of a vector.
 #'
 #' @param x vector
 #' @examples
@@ -31,7 +32,7 @@ len <- function(x) {
 }
 
 #' @title tochar
-#' @description Turn factor vector into a character vector
+#' @description Turns factor vector into a character vector - without have numbered levels.
 #' @export
 
 tochar <- function(x) {
@@ -74,6 +75,9 @@ colorgorical <- function(n = 10) {
 #' Cohort Tag
 #' @param grade Enrolled grade of the student
 #' @param school_year School year either in 20XX-YY or 20XX format.
+#' @examples
+#' cohort(10)
+#' cohort(10, 2008)
 #' @export
 
 cohort <- function(grade, school_year="") {
@@ -88,9 +92,11 @@ cohort <- function(grade, school_year="") {
 }
 
 #' yes_no
+#' @description Changes all 1's to "Yes" and all 0's to "No"
+#' Does not change NAs or other values.
 #' @export
 yes_no <- function(x) {
-  dplyr::if_else(x %in% 1, "Yes", "No")
+  dplyr::recode(x, "1" = "Yes", "0" = "No")
 }
 
 
@@ -111,4 +117,20 @@ change_firstlast_to_lastfirst <- function(name) {
     x <- paste(name_list[3], name_list[1], sep = ", ")
   }
   return(x)
+}
+
+
+#' @title cols_with_nas
+#' @description Count the number of NAs in each column
+#' @export
+cols_with_nas <- function(data) {
+  
+  new_data <- tidyr::gather(data, key, value) %>%
+    dplyr::filter(is.na(value))
+  
+  if(nrow(new_data) != 0) {
+    new_data <- count(new_data, key)
+  } 
+  
+  return(new_data)
 }
