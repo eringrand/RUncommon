@@ -7,7 +7,10 @@
 #' @param ... Additional parameters to pass to readxl
 #'
 #' @examples
-#' read_clean_data(filelocation, 1)
+#' \dontrun{
+#' library(RUncommon)
+#' /read_clean_data(filelocation, 1)
+#' }
 #' @export
 
 read_clean_data <- function(file, sheetname, ...) {
@@ -23,6 +26,7 @@ read_clean_data <- function(file, sheetname, ...) {
 #'
 #' @param x vector
 #' @examples
+#'  library(RUncommon)
 #' x <- 1:5
 #' len(x)
 #' @export
@@ -45,6 +49,7 @@ tochar <- function(x) {
 #' @description uses Colorgoical to create color paletes that work well.
 #' Requires httr and jsonlite packages.
 #'  @export
+
 colorgorical <- function(n = 10) {
   post_body <- jsonlite::toJSON(
     auto_unbox = TRUE,
@@ -76,6 +81,7 @@ colorgorical <- function(n = 10) {
 #' @param grade Enrolled grade of the student
 #' @param school_year School year either in 20XX-YY or 20XX format.
 #' @examples
+#' library(RUncommon)
 #' cohort(10)
 #' cohort(10, 2008)
 #' @export
@@ -92,8 +98,7 @@ cohort <- function(grade, school_year="") {
 }
 
 #' yes_no
-#' @description Changes all 1's to "Yes" and all 0's to "No"
-#' Does not change NAs or other values.
+#' @description Changes all 1's to "Yes" and all 0's to "No." Does not change NAs or other values.
 #' @export
 yes_no <- function(x) {
   dplyr::recode(x, "1" = "Yes", "0" = "No")
@@ -101,14 +106,12 @@ yes_no <- function(x) {
 
 
 #' @title change_firstlast_to_lastfirst
-#' @description change first_name last_name, to last_name, first_name
-#' Does not work with two part last names as it assumes only one space
-#' between the first and last name.
+#' @description change first_name last_name, to last_name, first_name. Does not work with two part last names as it assumes only one space between the first and last name.
 #' @param name The full name of someone in the form of First Name, Last Name. A character.
 #' @export
 
 change_firstlast_to_lastfirst <- function(name) {
-  name_list <- str_split(name, pattern = " ")[[1]]
+  name_list <- stringr::str_split(name, pattern = " ")[[1]]
   x <- ""
   if (length(name_list) <= 2) {
     x <- paste(name_list[2], name_list[1], sep = ", ")
@@ -122,14 +125,16 @@ change_firstlast_to_lastfirst <- function(name) {
 
 #' @title cols_with_nas
 #' @description Count the number of NAs in each column
+#' @param data Data frame to use
 #' @export
+
 cols_with_nas <- function(data) {
   
-  new_data <- tidyr::gather(data, key, value) %>%
+  new_data <- tidyr::gather(data) %>%
     dplyr::filter(is.na(value))
   
   if(nrow(new_data) != 0) {
-    new_data <- count(new_data, key)
+    new_data <- dplyr::count(new_data, key)
   } 
   
   return(new_data)

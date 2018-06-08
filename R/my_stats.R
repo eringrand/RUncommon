@@ -16,7 +16,7 @@ mape <- function(pred, actual) {
 
 #' This calculates the gini coeff
 #' @export
-#'
+
 mygini <- function(pred, actual) {
   w <- rep(1, length(pred))
   v <- data.frame(o = pred, p = pred, a = actual, w = w)
