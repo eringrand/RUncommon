@@ -6,7 +6,7 @@ A package of personal functions I use at work or in my personal projects. The fu
 To download this package for your own use, type.
 
 ``` r
-devtools::install_git("https://gitlab.com/eringrand/RUncommon.git")
+devtools::install_git("eringrand/RUncommon")
 library(RUncommon)
 ```
 
