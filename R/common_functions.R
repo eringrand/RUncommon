@@ -5,7 +5,7 @@
 #' - Cleans column names
 #'
 #' @param file The location of the file you are using.
-#' @param sheename The name of number of the sheet (as in readxl)
+#' @param sheetname The name of number of the sheet (as in readxl)
 #' @param ... Additional parameters to pass to readxl
 #'
 #' @examples
@@ -38,6 +38,7 @@ len <- function(x) {
 }
 
 #' @title tochar
+#' @param x a vector of factors
 #' @description Turns factor vector into a character vector - without have numbered levels.
 #' @export
 
@@ -50,7 +51,7 @@ tochar <- function(x) {
 #' @title colorgorical
 #' @description uses Colorgoical to create color paletes that work well.
 #' Requires httr and jsonlite packages.
-#'
+#' @param n number of colors in the palette. deafults to 10
 #' Credit to \href{https://gist.github.com/slowkow/22daea426607416bfcd573ce9cbd89ab}{slowkrow}
 #'  @export
 
@@ -116,8 +117,9 @@ cohort <- function(grade, school_year="") {
 }
 
 #' yes_no
-#' @description Changes all 1s to YES and everything else to NO. Useful for when you have 1 or 0s flags.
-#' Beware of NAs!
+#' @description Changes all 1s to YES and 0s to NO.
+#' Will not effect other values - so NAs remain the same.
+#' @param x vectors of 1s and 0s
 #' @export
 yes_no <- function(x) {
   dplyr::recode(x, "1" = "Yes", "0" = "No")
@@ -157,12 +159,12 @@ round_percent <- function(x, dig = 1) {
 
 #' @title cols_with_nas
 #' @description Count the number of NAs in each column
-#' @param data Data frame to use
+#' @param data data frame to look through
 #' @export
 
 cols_with_nas <- function(data) {
 
-  new_data <- tidyr::gather(data) %>%
+  new_data <- tidyr::gather(data, key, value) %>%
     dplyr::filter(is.na(value))
 
   if(nrow(new_data) != 0) {

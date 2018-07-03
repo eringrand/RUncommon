@@ -6,7 +6,10 @@
 \usage{
 yes_no(x)
 }
+\arguments{
+\item{x}{vectors of 1s and 0s}
+}
 \description{
-Changes all 1s to YES and everything else to NO. Useful for when you have 1 or 0s flags.
-Beware of NAs!
+Changes all 1s to YES and 0s to NO.
+Will not effect other values - so NAs remain the same.
 }

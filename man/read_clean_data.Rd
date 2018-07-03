@@ -9,9 +9,9 @@ read_clean_data(file, sheetname, ...)
 \arguments{
 \item{file}{The location of the file you are using.}
 
-\item{...}{Additional parameters to pass to readxl}
+\item{sheetname}{The name of number of the sheet (as in readxl)}
 
-\item{sheename}{The name of number of the sheet (as in readxl)}
+\item{...}{Additional parameters to pass to readxl}
 }
 \description{
 Reads in clean data from excel using janitor package and readxl
@@ -22,6 +22,6 @@ Reads in clean data from excel using janitor package and readxl
 \examples{
 \dontrun{
 library(RUncommon)
-/read_clean_data(filelocation, 1)
+read_clean_data(filelocation, 1)
 }
 }

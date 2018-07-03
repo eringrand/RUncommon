@@ -6,10 +6,12 @@
 \usage{
 colorgorical(n = 10)
 }
+\arguments{
+\item{n}{number of colors in the palette. deafults to 10
+Credit to \href{https://gist.github.com/slowkow/22daea426607416bfcd573ce9cbd89ab}{slowkrow}
+ @export}
+}
 \description{
 uses Colorgoical to create color paletes that work well.
 Requires httr and jsonlite packages.
-
-Credit to \href{https://gist.github.com/slowkow/22daea426607416bfcd573ce9cbd89ab}{slowkrow}
- @export
 }

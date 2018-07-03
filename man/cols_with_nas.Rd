@@ -7,7 +7,7 @@
 cols_with_nas(data)
 }
 \arguments{
-\item{data}{Data frame to use}
+\item{data}{data frame to look through}
 }
 \description{
 Count the number of NAs in each column

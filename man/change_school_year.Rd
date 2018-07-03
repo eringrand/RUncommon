@@ -6,11 +6,14 @@
 \usage{
 change_school_year(school_year)
 }
+\arguments{
+\item{school_year}{a school year in the full form of 20XX-20XY}
+}
 \description{
 Takes a value in the form 2016-2017
 and converts to 2016-17
 }
 \examples{
  change_school_year("2014-2015")
- 
+
 }
