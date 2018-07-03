@@ -3,6 +3,7 @@
 #' @docType package
 #' @name RUncommon
 #' @importFrom dplyr %>%
+#' @importFrom stats "qnorm"
 #' @keywords internal
 NULL
 ## quiets concerns of R CMD check re: the .'s that appear in pipelines
