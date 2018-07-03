@@ -1,12 +1,8 @@
 #' @title read_clean_data
 #' @description Reads in clean data from excel using janitor package and readxl
-<<<<<<< HEAD
 #' - Read in the data, assumes na = "",
 #' - Removes empty columns and rows
 #' - Cleans column names
-=======
-#' Remove empty columns, rows and then clean the names of the remaining columns.
->>>>>>> 58c231d47eea511d6abee872b958a94a86751e2a
 #'
 #' @param file The location of the file you are using.
 #' @param sheename The name of number of the sheet (as in readxl)
@@ -28,7 +24,7 @@ read_clean_data <- function(file, sheetname, ...) {
 
 
 #' @title len
-#' @description For consistincy between Python and R.  Returns the length of a vector.
+#' @description For similarity between Python and R.  Returns the length of a vector.
 #'
 #' @param x vector
 #' @examples
@@ -93,15 +89,11 @@ colorgorical <- function(n = 10) {
 #' however if the current date is Sep 10, 2017, the year will default to 2018.
 #'
 #' @param grade Enrolled grade of the student
-<<<<<<< HEAD
 #' @param school_year School year either in 20XX-YY or 20XX (spring) format.
-=======
-#' @param school_year School year either in 20XX-YY or 20XX format.
 #' @examples
 #' library(RUncommon)
 #' cohort(10)
 #' cohort(10, 2008)
->>>>>>> 58c231d47eea511d6abee872b958a94a86751e2a
 #' @export
 
 cohort <- function(grade, school_year="") {
@@ -124,12 +116,8 @@ cohort <- function(grade, school_year="") {
 }
 
 #' yes_no
-<<<<<<< HEAD
 #' @description Changes all 1s to YES and everything else to NO. Useful for when you have 1 or 0s flags.
 #' Beware of NAs!
-=======
-#' @description Changes all 1's to "Yes" and all 0's to "No." Does not change NAs or other values.
->>>>>>> 58c231d47eea511d6abee872b958a94a86751e2a
 #' @export
 yes_no <- function(x) {
   dplyr::recode(x, "1" = "Yes", "0" = "No")
@@ -137,15 +125,10 @@ yes_no <- function(x) {
 
 
 #' @title change_firstlast_to_lastfirst
-<<<<<<< HEAD
 #' @description change first_name last_name, to last_name, first_name
 #' Does not work with two part last names as it assumes only one space
 #' between the first and last name.
 #' @param name The full name of someone in the form of First Name, Last Name.
-=======
-#' @description change first_name last_name, to last_name, first_name. Does not work with two part last names as it assumes only one space between the first and last name.
-#' @param name The full name of someone in the form of First Name, Last Name. A character.
->>>>>>> 58c231d47eea511d6abee872b958a94a86751e2a
 #' @export
 
 change_firstlast_to_lastfirst <- function(name) {
@@ -161,7 +144,6 @@ change_firstlast_to_lastfirst <- function(name) {
 }
 
 
-<<<<<<< HEAD
 #' @title round_percent
 #' @description  A version of scales::percent() that allows for rounded digit
 #' so that you can have 20% or 20.5% as needed.
@@ -171,21 +153,21 @@ change_firstlast_to_lastfirst <- function(name) {
 
 round_percent <- function(x, dig = 1) {
   paste0(round(x * 100, digits = dig), "%")
-=======
+}
+
 #' @title cols_with_nas
 #' @description Count the number of NAs in each column
 #' @param data Data frame to use
 #' @export
 
 cols_with_nas <- function(data) {
-  
+
   new_data <- tidyr::gather(data) %>%
     dplyr::filter(is.na(value))
-  
+
   if(nrow(new_data) != 0) {
     new_data <- dplyr::count(new_data, key)
-  } 
-  
+  }
+
   return(new_data)
->>>>>>> 58c231d47eea511d6abee872b958a94a86751e2a
 }
