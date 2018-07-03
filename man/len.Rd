@@ -10,7 +10,7 @@ len(x)
 \item{x}{vector}
 }
 \description{
-For consistincy between Python and R.  Returns the length of a vector.
+For similarity between Python and R.  Returns the length of a vector.
 }
 \examples{
  library(RUncommon)
