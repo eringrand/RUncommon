@@ -18,3 +18,8 @@ If you do not provide a school year the default is the current (spring) year.
 e.g If today's date is Jan 10, 2017, the default year will be 2017,
 however if the current date is Sep 10, 2017, the year will default to 2018.
 }
+\examples{
+library(RUncommon)
+cohort(10)
+cohort(10, 2008)
+}

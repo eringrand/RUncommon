@@ -10,8 +10,10 @@ stat_smooth_func(mapping = NULL, data = NULL, geom = "smooth",
   method.args = list(), na.rm = FALSE, show.legend = NA,
   inherit.aes = TRUE, xpos = NULL, ypos = NULL)
 }
-\examples{
+\description{
 mostly taken from https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
+}
+\examples{
 library(dplyr)
 library(ggplot2)
 iris \%>\%

@@ -4,8 +4,8 @@
 \name{RUncommon}
 \alias{RUncommon}
 \alias{RUncommon-package}
-\title{uncommonR is my personal supply of functions that I use often enough not to want to rewrite everytime}
+\title{RUncommon is my personal supply of functions that I use often enough not to want to rewrite everytime}
 \description{
-uncommonR is my personal supply of functions that I use often enough not to want to rewrite everytime
+RUncommon is my personal supply of functions that I use often enough not to want to rewrite everytime
 }
 \keyword{internal}

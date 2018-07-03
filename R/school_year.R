@@ -24,9 +24,10 @@ sy_number <- function(school_year, before_2000 = FALSE) {
 #' @export
 #' @examples
 #'  change_school_year("2014-2015")
+#'  
 change_school_year <- function(school_year){
-  first_year <- str_sub(school_year, 1, 4)
-  second_year <- str_sub(school_year, -2, -1)
+  first_year <- substr(school_year, 1, 4)
+  second_year <- stringr::str_sub(school_year, -2, -1)
   paste0(first_year, "-", second_year)
 }
 
@@ -42,7 +43,7 @@ change_school_year <- function(school_year){
 
 sy_form <- function(school_year, spring_year = TRUE) {
   cent <- as.numeric(substr(school_year, 1, 2)) * 100
-  school_year = as.numeric(school_year)
+  school_year <- as.numeric(school_year)
   if(spring_year) {
     paste(school_year - 1, school_year - cent, sep = "-")
   } else {

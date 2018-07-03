@@ -18,7 +18,7 @@ mape <- function(pred, actual) {
 #' @param pred vector of predictions
 #' @param actual vector of actual values
 #' @export
-#'
+
 mygini <- function(pred, actual) {
   w <- rep(1, length(pred))
   v <- data.frame(o = pred, p = pred, a = actual, w = w)

@@ -7,6 +7,10 @@
 yes_no(x)
 }
 \description{
+<<<<<<< HEAD
 Changes all 1s to YES and everything else to NO. Useful for when you have 1 or 0s flags.
 Beware of NAs!
+=======
+Changes all 1's to "Yes" and all 0's to "No." Does not change NAs or other values.
+>>>>>>> 58c231d47eea511d6abee872b958a94a86751e2a
 }

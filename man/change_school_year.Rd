@@ -12,4 +12,5 @@ and converts to 2016-17
 }
 \examples{
  change_school_year("2014-2015")
+ 
 }
