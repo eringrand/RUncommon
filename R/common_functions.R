@@ -11,7 +11,7 @@
 #' @examples
 #' \dontrun{
 #' library(RUncommon)
-#' /read_clean_data(filelocation, 1)
+#' read_clean_data(filelocation, 1)
 #' }
 #' @export
 

@@ -10,5 +10,7 @@ change_firstlast_to_lastfirst(name)
 \item{name}{The full name of someone in the form of First Name, Last Name.}
 }
 \description{
-change first_name last_name, to last_name, first_name. Does not work with two part last names as it assumes only one space between the first and last name.
+change first_name last_name, to last_name, first_name
+Does not work with two part last names as it assumes only one space
+between the first and last name.
 }
