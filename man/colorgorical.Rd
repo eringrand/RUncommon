@@ -9,5 +9,7 @@ colorgorical(n = 10)
 \description{
 uses Colorgoical to create color paletes that work well.
 Requires httr and jsonlite packages.
+
+Credit to \href{https://gist.github.com/slowkow/22daea426607416bfcd573ce9cbd89ab}{slowkrow}
  @export
 }

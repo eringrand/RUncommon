@@ -15,6 +15,8 @@ mape <- function(pred, actual) {
 }
 
 #' This calculates the gini coeff
+#' @param pred vector of predictions
+#' @param actual vector of actual values
 #' @export
 #'
 mygini <- function(pred, actual) {
@@ -29,6 +31,8 @@ mygini <- function(pred, actual) {
 }
 
 #' True Positive Rate
+#' @param pred vector of predictions
+#' @param actual vector of actual values
 #' @export
 #'
 tpr <- function(pred, actual) {
@@ -43,6 +47,8 @@ tpr <- function(pred, actual) {
 }
 
 #' True Negative Rate
+#' @param pred vector of predictions
+#' @param actual vector of actual values
 #' @export
 tnr <- function(pred, actual) {
   smry_table <- data.frame(table(pred, actual))
@@ -56,6 +62,8 @@ tnr <- function(pred, actual) {
 }
 
 #' False Positive Rate
+#' @param pred vector of predictions
+#' @param actual vector of actual values
 #' @export
 fpr <- function(pred, actual) {
   smry_table <- data.frame(table(pred, actual))
@@ -69,6 +77,8 @@ fpr <- function(pred, actual) {
 }
 
 #' False Negative Rate
+#' @param pred vector of predictions
+#' @param actual vector of actual values
 #' @export
 fnr <- function(pred, actual) {
   smry_table <- data.frame(table(pred, actual))
@@ -82,6 +92,8 @@ fnr <- function(pred, actual) {
 }
 
 #' @title Classification accuracy
+#' @param pred vector of predictions
+#' @param actual vector of actual values
 #' @export
 cls_acc <- function(pred, actual) {
   out <- sum(abs(pred - actual)) / length(actual)

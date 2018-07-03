@@ -7,5 +7,6 @@
 yes_no(x)
 }
 \description{
-yes_no
+Changes all 1s to YES and everything else to NO. Useful for when you have 1 or 0s flags.
+Beware of NAs!
 }

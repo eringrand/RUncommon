@@ -6,6 +6,11 @@
 \usage{
 tnr(pred, actual)
 }
+\arguments{
+\item{pred}{vector of predictions}
+
+\item{actual}{vector of actual values}
+}
 \description{
 True Negative Rate
 }

@@ -6,3 +6,8 @@
 \usage{
 cls_acc(pred, actual)
 }
+\arguments{
+\item{pred}{vector of predictions}
+
+\item{actual}{vector of actual values}
+}

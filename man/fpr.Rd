@@ -6,6 +6,11 @@
 \usage{
 fpr(pred, actual)
 }
+\arguments{
+\item{pred}{vector of predictions}
+
+\item{actual}{vector of actual values}
+}
 \description{
 False Positive Rate
 }

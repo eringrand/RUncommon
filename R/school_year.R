@@ -5,7 +5,7 @@
 #' and converts to a number representing the second/spring year.
 #' @export
 #' @examples
-#'  sy_number("SY16-17")
+#' sy_number("SY16-17")
 
 sy_number <- function(school_year, before_2000 = FALSE) {
   if(!before_2000) {
@@ -38,7 +38,7 @@ change_school_year <- function(school_year){
 #' and converts to 2016-17. The opposite of `sy_number` with 20 instead of SY.
 #' @export
 #' @examples
-#'  sy_form("2015")
+#' sy_form("2015")
 
 sy_form <- function(school_year, spring_year = TRUE) {
   cent <- as.numeric(substr(school_year, 1, 2)) * 100

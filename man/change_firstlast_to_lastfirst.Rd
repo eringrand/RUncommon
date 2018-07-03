@@ -7,7 +7,7 @@
 change_firstlast_to_lastfirst(name)
 }
 \arguments{
-\item{name}{The full name of someone in the form of First Name, Last Name. A character.}
+\item{name}{The full name of someone in the form of First Name, Last Name.}
 }
 \description{
 change first_name last_name, to last_name, first_name

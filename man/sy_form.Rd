@@ -16,5 +16,5 @@ Takes a value in the form of a number (i.e. 2017)
 and converts to 2016-17. The opposite of `sy_number` with 20 instead of SY.
 }
 \examples{
- sy_form("2015")
+sy_form("2015")
 }

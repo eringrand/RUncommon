@@ -6,6 +6,11 @@
 \usage{
 fnr(pred, actual)
 }
+\arguments{
+\item{pred}{vector of predictions}
+
+\item{actual}{vector of actual values}
+}
 \description{
 False Negative Rate
 }

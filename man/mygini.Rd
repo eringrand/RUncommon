@@ -6,6 +6,11 @@
 \usage{
 mygini(pred, actual)
 }
+\arguments{
+\item{pred}{vector of predictions}
+
+\item{actual}{vector of actual values}
+}
 \description{
 This calculates the gini coeff
 }

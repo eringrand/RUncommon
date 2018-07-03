@@ -15,6 +15,9 @@ read_clean_data(file, sheetname, ...)
 }
 \description{
 Reads in clean data from excel using janitor package and readxl
+- Read in the data, assumes na = "",
+- Removes empty columns and rows
+- Cleans column names
 }
 \examples{
 read_clean_data(filelocation, 1)

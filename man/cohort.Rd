@@ -9,8 +9,12 @@ cohort(grade, school_year = "")
 \arguments{
 \item{grade}{Enrolled grade of the student}
 
-\item{school_year}{School year either in 20XX-YY or 20XX format.}
+\item{school_year}{School year either in 20XX-YY or 20XX (spring) format.}
 }
 \description{
-Cohort Tag
+Defines a student's cohort given the student's grade and current school year.
+
+If you do not provide a school year the default is the current (spring) year.
+e.g If today's date is Jan 10, 2017, the default year will be 2017,
+however if the current date is Sep 10, 2017, the year will default to 2018.
 }
