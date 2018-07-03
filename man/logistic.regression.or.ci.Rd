@@ -6,11 +6,15 @@
 \usage{
 logistic.regression.or.ci(regress.out, level = 0.95)
 }
+\arguments{
+\item{regress.out}{logistic regression output}
+
+\item{level}{level to test at, deafult is 0.95}
+}
 \description{
 This function takes the output from a glm
  (logistic model) command in R and provides not
  only the usual output from the summary command, but
  adds confidence intervals for all coefficients and OR's.
-
 This version accommodates multiple regression parameters
 }

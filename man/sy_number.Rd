@@ -9,7 +9,7 @@ sy_number(school_year, before_2000 = FALSE)
 \arguments{
 \item{school_year}{school year in the form SY16-17 or 2016-17}
 
-\item{before_200}{if the year is prior to 2000 and should be written as 1900 - 1901. Dafaults to FALSE (i.e. 2001-02)}
+\item{before_2000}{if the year is prior to 2000 and should be written as 1900 - 1901. Dafaults to FALSE (i.e. 2001-02)}
 }
 \description{
 Takes a value in the form SY16-17 or 2016-17

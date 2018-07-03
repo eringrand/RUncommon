@@ -4,13 +4,16 @@
 #'  (logistic model) command in R and provides not
 #'  only the usual output from the summary command, but
 #'  adds confidence intervals for all coefficients and OR's.
-#'
 #' This version accommodates multiple regression parameters
+#'
+#' @param regress.out logistic regression output
+#' @param level level to test at, deafult is 0.95
+#'
 #' @export
 
 logistic.regression.or.ci <- function(regress.out, level=0.95) {
   usual.output <- summary(regress.out)
-  z.quantile <- qnorm(1 - (1 - level) / 2)
+  z.quantile <- stats::qnorm(1 - (1 - level) / 2)
   number.vars <- length(regress.out$coefficients)
   OR <- exp(regress.out$coefficients[-1])
   temp.store.result <- matrix(rep(NA, number.vars * 2), nrow = number.vars)

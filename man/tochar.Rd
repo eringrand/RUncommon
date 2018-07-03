@@ -6,6 +6,9 @@
 \usage{
 tochar(x)
 }
+\arguments{
+\item{x}{a vector of factors}
+}
 \description{
 Turns factor vector into a character vector - without have numbered levels.
 }
