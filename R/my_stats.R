@@ -1,25 +1,41 @@
-#' @title Root Mean Squared Error
+length_error <- function(pred, actual) {
+  if(length(pred) != length(actual)) stop("pred and actual are not the same length")
+}
+#' Statiscs Functions
+
+
+
+
+#'
 #' @param pred vector of predictions
 #' @param actual vector of actual values
-#' @export
 
+#' @describeIn stats root mean standard error
+#' @export
 rmse <- function(pred, actual) {
-  return(sqrt(mean((pred - actual) ^ 2)))
+  length_error(pred, actual)
+
+  rmse <- sqrt(sum((pred - actual)^2) / length(actual))
+  return(rmse)
 }
 
-#' Mean Absolute Percent Error
-# @export
+#' @describeIn rmse Mean Absolute Percent Error
+#' @export
 mape <- function(pred, actual) {
+  length_error(pred, actual)
+
   mape <- sum(abs(pred - actual)) / sum(actual)
   return(mape)
 }
 
-#' This calculates the gini coeff
-#' @param pred vector of predictions
-#' @param actual vector of actual values
-#' @export
 
+#' @describeIn stats gini coeff
+#' @export
 mygini <- function(pred, actual) {
+  length_error(pred, actual)
+
+  length_error(pred, actual)
+
   w <- rep(1, length(pred))
   v <- data.frame(o = pred, p = pred, a = actual, w = w)
   v <- v[order(v$o), ]
@@ -30,12 +46,11 @@ mygini <- function(pred, actual) {
   return(gini)
 }
 
-#' True Positive Rate
-#' @param pred vector of predictions
-#' @param actual vector of actual values
+#' @describeIn stats True Positive Rate
 #' @export
-#'
 tpr <- function(pred, actual) {
+  length_error(pred, actual)
+
   smry_table <- data.frame(table(pred, actual))
   num <- smry_table$Freq[smry_table$pred == 1 & smry_table$actual == 1]
   den <- sum(smry_table$Freq[smry_table$actual == 1])
@@ -46,11 +61,11 @@ tpr <- function(pred, actual) {
   return(out)
 }
 
-#' True Negative Rate
-#' @param pred vector of predictions
-#' @param actual vector of actual values
+#' @describeIn stats  True Negative Rate
 #' @export
 tnr <- function(pred, actual) {
+  length_error(pred, actual)
+
   smry_table <- data.frame(table(pred, actual))
   num <- smry_table$Freq[smry_table$pred == 0 & smry_table$actual == 0]
   den <- sum(smry_table$Freq[smry_table$actual == 0])
@@ -61,11 +76,11 @@ tnr <- function(pred, actual) {
   return(out)
 }
 
-#' False Positive Rate
-#' @param pred vector of predictions
-#' @param actual vector of actual values
+#' @describeIn stats False Positive Rate
 #' @export
 fpr <- function(pred, actual) {
+  length_error(pred, actual)
+
   smry_table <- data.frame(table(pred, actual))
   num <- smry_table$Freq[smry_table$pred == 1 & smry_table$actual == 0]
   den <- sum(smry_table$Freq[smry_table$actual == 0])
@@ -76,11 +91,11 @@ fpr <- function(pred, actual) {
   return(out)
 }
 
-#' False Negative Rate
-#' @param pred vector of predictions
-#' @param actual vector of actual values
+#' @describeIn stats False Negative Rate
 #' @export
 fnr <- function(pred, actual) {
+  length_error(pred, actual)
+
   smry_table <- data.frame(table(pred, actual))
   num <- smry_table$Freq[smry_table$pred == 0 & smry_table$actual == 1]
   den <- sum(smry_table$Freq[smry_table$actual == 1])
@@ -91,13 +106,11 @@ fnr <- function(pred, actual) {
   return(out)
 }
 
-#' @title Classification accuracy
-#' @param pred vector of predictions
-#' @param actual vector of actual values
+#' @describeIn stats Classification accuracy
 #' @export
 cls_acc <- function(pred, actual) {
+  length_error(pred, actual)
+
   out <- sum(abs(pred - actual)) / length(actual)
-  out <- round((1 - out) * 100, 2)
-  # print(paste("The classification accuracy is ",out,"%.",sep=''))
   return(out)
 }

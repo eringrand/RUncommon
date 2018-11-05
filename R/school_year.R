@@ -1,8 +1,9 @@
-#' @title school_year
+#' @title sy_number
 #' @param school_year school year in the form SY16-17 or 2016-17
 #' @param before_2000 if the year is prior to 2000 and should be written as 1900 - 1901. Dafaults to FALSE (i.e. 2001-02)
 #' @description Takes a value in the form SY16-17 or 2016-17
 #' and converts to a number representing the second/spring year.
+#' @seealso \code{\link{change_school_year}} \code{\link{sy_form}} \code{\link{sy_number}}
 #' @export
 #' @examples
 #' sy_number("SY16-17")
@@ -22,12 +23,13 @@ sy_number <- function(school_year, before_2000 = FALSE) {
 #' @description Takes a value in the form 2016-2017
 #' and converts to 2016-17
 #' @param school_year a school year in the full form of 20XX-20XY
+#' @seealso \code{\link{change_school_year}} \code{\link{sy_form}} \code{\link{sy_number}}
 #' @export
 #' @examples
 #'  change_school_year("2014-2015")
 #'
 change_school_year <- function(school_year){
-  stopifnot(nchar(school_year) == 9)
+  if(nchar(school_year) != 9) stop("school_year is not in the form 20XX-20YY")
 
   first_year <- stringr::str_sub(school_year, 1, 4)
   second_year <- stringr::str_sub(school_year, -2, -1)
@@ -40,6 +42,7 @@ change_school_year <- function(school_year){
 #' @param spring_year If the given year represents the Spring portion then TRUE. Defaults to TRUE
 #' @description Takes a value in the form of a number (i.e. 2017)
 #' and converts to 2016-17. The opposite of `sy_number` with 20 instead of SY.
+#' @seealso \code{\link{change_school_year}} \code{\link{sy_form}} \code{\link{sy_number}}
 #' @export
 #' @examples
 #' sy_form("2015")

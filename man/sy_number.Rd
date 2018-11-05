@@ -2,7 +2,7 @@
 % Please edit documentation in R/school_year.R
 \name{sy_number}
 \alias{sy_number}
-\title{school_year}
+\title{sy_number}
 \usage{
 sy_number(school_year, before_2000 = FALSE)
 }
@@ -17,4 +17,7 @@ and converts to a number representing the second/spring year.
 }
 \examples{
 sy_number("SY16-17")
+}
+\seealso{
+\code{\link{change_school_year}} \code{\link{sy_form}} \code{\link{sy_number}}
 }
