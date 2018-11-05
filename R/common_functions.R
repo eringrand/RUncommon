@@ -128,9 +128,10 @@ yes_no <- function(x) {
 
 #' @title change_firstlast_to_lastfirst
 #' @description change first_name last_name, to last_name, first_name
-#' Does not work with two part last names as it assumes only one space
-#' between the first and last name.
-#' @param name The full name of someone in the form of First Name, Last Name.
+#' This function does not work with two part last names as it assumes
+#' there is only one space between the first and last name.
+#' @param name The full name of someone in the form of "First_Name Last_Name"
+#' @return Last_Name, First Name
 #' @export
 
 change_firstlast_to_lastfirst <- function(name) {

@@ -17,3 +17,6 @@ and converts to 2016-17
  change_school_year("2014-2015")
 
 }
+\seealso{
+\code{\link{change_school_year}} \code{\link{sy_form}} \code{\link{sy_number}}
+}

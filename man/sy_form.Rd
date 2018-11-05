@@ -18,3 +18,6 @@ and converts to 2016-17. The opposite of `sy_number` with 20 instead of SY.
 \examples{
 sy_form("2015")
 }
+\seealso{
+\code{\link{change_school_year}} \code{\link{sy_form}} \code{\link{sy_number}}
+}
