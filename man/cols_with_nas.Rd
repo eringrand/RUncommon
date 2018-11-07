@@ -12,3 +12,8 @@ cols_with_nas(data)
 \description{
 Count the number of NAs in each column
 }
+\examples{
+\dontrun{
+cols_with_nas(nycflights13::flights)
+}
+}

@@ -161,6 +161,10 @@ round_percent <- function(x, dig = 1) {
 #' @title cols_with_nas
 #' @description Count the number of NAs in each column
 #' @param data data frame to look through
+#' @examples
+#' \dontrun{
+#' cols_with_nas(nycflights13::flights)
+#' }
 #' @export
 
 cols_with_nas <- function(data) {
