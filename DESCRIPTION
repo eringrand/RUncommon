@@ -1,6 +1,6 @@
 Package: RUncommon
 Title: Erin's Personal Package
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: c(person("Erin", "Grand", email = "eringrand@gmail.com", role = "cre"))
 Description: Supplies common functions so that I do not have to rewrite them all the time
 Depends: R (>= 3.3.1)
