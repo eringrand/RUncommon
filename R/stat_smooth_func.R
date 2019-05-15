@@ -25,11 +25,10 @@
 #' library(dplyr)
 #' library(ggplot2)
 #' iris %>%
-#'    ggplot(aes(x = Sepal.Width, y = Petal.Width, color = Species)) +
-#'    geom_point() +
-#'    stat_smooth_func(geom = "text", method = "lm", parse = TRUE, hjust = 0) +
-#'    facet_wrap(~Species)
-
+#'   ggplot(aes(x = Sepal.Width, y = Petal.Width, color = Species)) +
+#'   geom_point() +
+#'   stat_smooth_func(geom = "text", method = "lm", parse = TRUE, hjust = 0) +
+#'   facet_wrap(~Species)
 stat_smooth_func <- function(mapping = NULL,
                              data = NULL,
                              geom = "smooth",
@@ -48,35 +47,34 @@ stat_smooth_func <- function(mapping = NULL,
                              inherit.aes = TRUE,
                              xpos = NULL,
                              ypos = NULL) {
-                        layer(
-                          data = data,
-                          mapping = mapping,
-                          stat = StatSmoothFunc,
-                          geom = geom,
-                          position = position,
-                          show.legend = show.legend,
-                          inherit.aes = inherit.aes,
-                          params = list(
-                            method = method,
-                            formula = formula,
-                            se = se,
-                            n = n,
-                            fullrange = fullrange,
-                            level = level,
-                            na.rm = na.rm,
-                            method.args = method.args,
-                            span = span,
-                            xpos = xpos,
-                            ypos = ypos,
-                            ...
-                          )
-                        )
-                      }
+  layer(
+    data = data,
+    mapping = mapping,
+    stat = StatSmoothFunc,
+    geom = geom,
+    position = position,
+    show.legend = show.legend,
+    inherit.aes = inherit.aes,
+    params = list(
+      method = method,
+      formula = formula,
+      se = se,
+      n = n,
+      fullrange = fullrange,
+      level = level,
+      na.rm = na.rm,
+      method.args = method.args,
+      span = span,
+      xpos = xpos,
+      ypos = ypos,
+      ...
+    )
+  )
+}
 
 
 StatSmoothFunc <- ggplot2::ggproto(
   "StatSmooth", ggplot2::Stat,
-
   setup_params = function(data, params) {
     # Figure out what type of smoothing to do: loess for small datasets,
     # gam with a cubic regression basis for large data
@@ -98,10 +96,10 @@ StatSmoothFunc <- ggplot2::ggproto(
     params
   },
 
-  compute_group = function(data, scales, method = "auto", formula = y~x,
-                           se = TRUE, n = 80, span = 0.75, fullrange = FALSE,
-                           xseq = NULL, level = 0.95, method.args = list(),
-                           na.rm = FALSE, xpos=NULL, ypos=NULL) {
+  compute_group = function(data, scales, method = "auto", formula = y ~ x,
+                             se = TRUE, n = 80, span = 0.75, fullrange = FALSE,
+                             xseq = NULL, level = 0.95, method.args = list(),
+                             na.rm = FALSE, xpos = NULL, ypos = NULL) {
     if (length(unique(data$x)) < 2) {
       # Not enough data to perform fit
       return(data.frame())
@@ -141,7 +139,7 @@ StatSmoothFunc <- ggplot2::ggproto(
     #                       b = format(coef(m)[2], digits = 3),
     #                       r2 = format(summary(m)$r.squared, digits = 3)))
     eq <- substitute(
-      italic(r)^2 ~  "=" ~ r2,
+      italic(r)^2 ~ "=" ~ r2,
       list(r2 = format(summary(m)$r.squared, digits = 3))
     )
     func_string <- as.character(as.expression(eq))

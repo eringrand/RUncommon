@@ -11,17 +11,17 @@
 #'
 #' @export
 
-logistic.regression.or.ci <- function(regress.out, level=0.95) {
+logistic.regression.or.ci <- function(regress.out, level = 0.95) {
   usual.output <- summary(regress.out)
   z.quantile <- stats::qnorm(1 - (1 - level) / 2)
   number.vars <- length(regress.out$coefficients)
   OR <- exp(regress.out$coefficients[-1])
   temp.store.result <- matrix(rep(NA, number.vars * 2), nrow = number.vars)
   for (i in 1:number.vars)
-    {
-      temp.store.result[i, ] <- summary(regress.out)$coefficients[i] +
-        c(-1, 1) * z.quantile * summary(regress.out)$coefficients[i + number.vars]
-    }
+  {
+    temp.store.result[i, ] <- summary(regress.out)$coefficients[i] +
+      c(-1, 1) * z.quantile * summary(regress.out)$coefficients[i + number.vars]
+  }
   intercept.ci <- temp.store.result[1, ]
   slopes.ci <- temp.store.result[-1, ]
   OR.ci <- exp(slopes.ci)

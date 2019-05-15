@@ -7,12 +7,11 @@
 #' @export
 #' @examples
 #' sy_number("SY16-17")
-
 sy_number <- function(school_year, before_2000 = FALSE) {
-  if(!before_2000) {
+  if (!before_2000) {
     2000 + as.numeric(stringr::str_sub(school_year, -2))
   }
-  else{
+  else {
     1900 + as.numeric(stringr::str_sub(school_year, -2))
   }
 }
@@ -26,10 +25,9 @@ sy_number <- function(school_year, before_2000 = FALSE) {
 #' @seealso \code{\link{change_school_year}} \code{\link{sy_form}} \code{\link{sy_number}}
 #' @export
 #' @examples
-#'  change_school_year("2014-2015")
-#'
-change_school_year <- function(school_year){
-  if(stringr::str_length(school_year) != 9) stop("school_year is not in the form 20XX-20YY")
+#' change_school_year("2014-2015")
+change_school_year <- function(school_year) {
+  if (stringr::str_length(school_year) != 9) stop("school_year is not in the form 20XX-20YY")
 
   first_year <- stringr::str_sub(school_year, 1, 4)
   second_year <- stringr::str_sub(school_year, -2, -1)
@@ -46,17 +44,16 @@ change_school_year <- function(school_year){
 #' @export
 #' @examples
 #' sy_form("2015")
-
 sy_form <- function(school_year, spring_year = TRUE) {
-  if(stringr::str_length(school_year) != 4) stop("school_year is not a number in the form XXXX")
+  if (stringr::str_length(school_year) != 4) stop("school_year is not a number in the form XXXX")
 
   cent <- as.numeric(stringr::str_sub(school_year, 1, 2)) * 100
   school_year <- as.numeric(school_year)
 
-  if(spring_year) {
+  if (spring_year) {
     stringr::str_c(school_year - 1, school_year - cent, sep = "-")
   } else {
-    stringr::str_c(school_year, school_year - cent + 1 , sep = "-")
+    stringr::str_c(school_year, school_year - cent + 1, sep = "-")
   }
 }
 
@@ -67,17 +64,15 @@ sy_form <- function(school_year, spring_year = TRUE) {
 #' @export
 #' @examples
 #' school_year_from_date()
-
 school_year_from_date <- function(date = lubridate::today()) {
   year <- lubridate::year(date)
   month <- lubridate::month(date)
 
   # define where the "spring" year starts
-  if(month >= 9) { # Fall year: Sep - Dec
-     spring_year = year + 1
-     }  else { # Spring year: Jan - Aug
-       spring_year = year
-     }
-   return(sy_form(spring_year))
-
+  if (month >= 9) { # Fall year: Sep - Dec
+    spring_year <- year + 1
+  } else { # Spring year: Jan - Aug
+    spring_year <- year
+  }
+  return(sy_form(spring_year))
 }
