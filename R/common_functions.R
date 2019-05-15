@@ -25,13 +25,11 @@ read_clean_data <- function(file, sheetname, ...) {
 
 #' @title len
 #' @description For similarity between Python and R.  Returns the length of a vector.
-#'
 #' @param x vector
 #' @examples
 #'  library(RUncommon)
 #' x <- 1:5
 #' len(x)
-#' @param x a vector
 #' @export
 
 len <- function(x) {
@@ -102,13 +100,13 @@ cohort <- function(grade, school_year="") {
   years_to_grade <- 12 - as.numeric(grade)
 
   if (all(school_year == "")) {
-    
+
     month_of_year <- format(Sys.Date(), "%m")
-    
+
     if(month_of_year <= 8) {
     current_year <- as.numeric(format(Sys.Date(), "%Y"))
     } else{
-    
+
     current_year <- as.numeric(format(Sys.Date(), "%Y")) + 1
     }
   }
@@ -164,7 +162,9 @@ round_percent <- function(x, dig = 1) {
 
 #' @title cols_with_nas
 #' @description Count the number of NAs in each column
+#'
 #' @param data data frame to look through
+#'
 #' @examples
 #' \dontrun{
 #' cols_with_nas(nycflights13::flights)
@@ -173,7 +173,7 @@ round_percent <- function(x, dig = 1) {
 
 cols_with_nas <- function(data) {
 
-  new_data <- tidyr::gather(data, key, value) %>%
+  new_data <- tidyr::gather(data) %>%
     dplyr::filter(is.na(value))
 
   if(nrow(new_data) != 0) {
