@@ -31,7 +31,6 @@ test_that("sy_from string too big", {
 
 
 # school_year_from_date
-
 test_that("school_year_from_date", {
   expect_equal(school_year_from_date(date = "2019-05-15"), "2018-19")
   expect_equal(school_year_from_date(date = as.POSIXct("2019-05-15")), "2018-19")
