@@ -23,11 +23,11 @@
 #' @export
 
 spread_many <- function(data,key_col,...,fill = NA,
-                      convert = TRUE,drop = TRUE,sep = "_"){
+                      convert = TRUE, drop = TRUE,sep = "_"){
   key_quo <- rlang::enquo(key_col)
   val_quos <- rlang::quos(...)
   value_cols <- unname(tidyselect::vars_select(names(data),!!!val_quos))
-  key_col <- quo_name(!!key_quo)
+  key_col <- rlang::quo_name(!!key_quo)
 
   data %>%
     tidyr::gather(key = "..var..", value = "..val..", !!!val_quos) %>%

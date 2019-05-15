@@ -8,6 +8,8 @@ len(x)
 }
 \arguments{
 \item{x}{vector}
+
+\item{x}{a vector}
 }
 \description{
 For similarity between Python and R.  Returns the length of a vector.
