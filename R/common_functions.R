@@ -31,6 +31,7 @@ read_clean_data <- function(file, sheetname, ...) {
 #'  library(RUncommon)
 #' x <- 1:5
 #' len(x)
+#' @param x a vector
 #' @export
 
 len <- function(x) {
@@ -101,10 +102,13 @@ cohort <- function(grade, school_year="") {
   years_to_grade <- 12 - as.numeric(grade)
 
   if (all(school_year == "")) {
+    
     month_of_year <- format(Sys.Date(), "%m")
+    
     if(month_of_year <= 8) {
     current_year <- as.numeric(format(Sys.Date(), "%Y"))
     } else{
+    
     current_year <- as.numeric(format(Sys.Date(), "%Y")) + 1
     }
   }
