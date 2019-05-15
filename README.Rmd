@@ -2,6 +2,7 @@
 title: "RUncommon"
 output: github_document
 ---
+[![pipeline status](https://gitlab.com/eringrand/RUncommon/badges/master/pipeline.svg)](https://gitlab.com/eringrand/RUncommon/commits/master)
 
 [![coverage report](https://gitlab.com/eringrand/RUncommon/badges/master/coverage.svg)](https://gitlab.com/eringrand/RUncommon/commits/master)
 
@@ -12,8 +13,14 @@ This package is mirrored on both gitlab and github, so you can install from eith
 
 To download this package for your own use copy the following lines into the R console. 
 
+GitHub:
 ```r
-devtools::install_git("eringrand/RUncommon")
+remotes::install_git("eringrand/RUncommon")
+library(RUncommon)
+```
+Gitlab:
+```r
+remotes::install_gitlab("eringrand/RUncommon")
 library(RUncommon)
 ```
 

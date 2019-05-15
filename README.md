@@ -1,6 +1,9 @@
 RUncommon
 ================
 
+[![pipeline
+status](https://gitlab.com/eringrand/RUncommon/badges/master/pipeline.svg)](https://gitlab.com/eringrand/RUncommon/commits/master)
+
 [![coverage
 report](https://gitlab.com/eringrand/RUncommon/badges/master/coverage.svg)](https://gitlab.com/eringrand/RUncommon/commits/master)
 
@@ -14,8 +17,17 @@ from either location.
 To download this package for your own use copy the following lines into
 the R console.
 
+GitHub:
+
 ``` r
-devtools::install_git("eringrand/RUncommon")
+remotes::install_git("eringrand/RUncommon")
+library(RUncommon)
+```
+
+Gitlab:
+
+``` r
+remotes::install_gitlab("eringrand/RUncommon")
 library(RUncommon)
 ```
 
