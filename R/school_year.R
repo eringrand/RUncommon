@@ -48,13 +48,36 @@ change_school_year <- function(school_year){
 #' sy_form("2015")
 
 sy_form <- function(school_year, spring_year = TRUE) {
-  cent <- as.numeric(stringr::str_sub(school_year, 1, 2)) * 100
+  if(stringr::str_length(school_year) != 4) stop("school_year is not a number in the form XXXX")
 
+  cent <- as.numeric(stringr::str_sub(school_year, 1, 2)) * 100
   school_year <- as.numeric(school_year)
 
   if(spring_year) {
-    str_c(school_year - 1, school_year - cent, sep = "-")
+    stringr::str_c(school_year - 1, school_year - cent, sep = "-")
   } else {
-    str_c(school_year, school_year - cent + 1 , sep = "-")
+    stringr::str_c(school_year, school_year - cent + 1 , sep = "-")
   }
+}
+
+#' @title school_year_from_date
+#' @param date date in the form of lubridate::today()
+#' @description Takes a date (in lubridate::today) format and converts to a given schools year.
+#' @seealso \code{\link{change_school_year}} \code{\link{sy_form}} \code{\link{sy_number}}
+#' @export
+#' @examples
+#' school_year_from_date()
+
+school_year_from_date <- function(date = lubridate::today()) {
+  year <- lubridate::year(date)
+  month <- lubridate::month(date)
+
+  # define where the "spring" year starts
+  if(month >= 9) { # Fall year: Sep - Dec
+     spring_year = year + 1
+     }  else { # Spring year: Jan - Aug
+       spring_year = year
+     }
+   return(sy_form(spring_year))
+
 }
