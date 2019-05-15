@@ -29,7 +29,7 @@ sy_number <- function(school_year, before_2000 = FALSE) {
 #'  change_school_year("2014-2015")
 #'
 change_school_year <- function(school_year){
-  if(nchar(school_year) != 9) stop("school_year is not in the form 20XX-20YY")
+  if(stringr::str_length(school_year) != 9) stop("school_year is not in the form 20XX-20YY")
 
   first_year <- stringr::str_sub(school_year, 1, 4)
   second_year <- stringr::str_sub(school_year, -2, -1)
@@ -48,11 +48,13 @@ change_school_year <- function(school_year){
 #' sy_form("2015")
 
 sy_form <- function(school_year, spring_year = TRUE) {
-  cent <- as.numeric(substr(school_year, 1, 2)) * 100
+  cent <- as.numeric(stringr::str_sub(school_year, 1, 2)) * 100
+
   school_year <- as.numeric(school_year)
+
   if(spring_year) {
-    paste(school_year - 1, school_year - cent, sep = "-")
+    str_c(school_year - 1, school_year - cent, sep = "-")
   } else {
-    paste(school_year, school_year - cent + 1 , sep = "-")
+    str_c(school_year, school_year - cent + 1 , sep = "-")
   }
 }

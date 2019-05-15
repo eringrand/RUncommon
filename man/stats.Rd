@@ -2,6 +2,7 @@
 % Please edit documentation in R/my_stats.R
 \name{rmse}
 \alias{rmse}
+\alias{mape}
 \alias{mygini}
 \alias{tpr}
 \alias{tnr}
@@ -11,6 +12,8 @@
 \title{Statiscs Functions}
 \usage{
 rmse(pred, actual)
+
+mape(pred, actual)
 
 mygini(pred, actual)
 
@@ -35,6 +38,8 @@ Statiscs Functions
 \section{Functions}{
 \itemize{
 \item \code{rmse}: root mean standard error
+
+\item \code{mape}: Mean Absolute Percent Error
 
 \item \code{mygini}: gini coeff
 

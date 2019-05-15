@@ -14,7 +14,7 @@ rmse <- function(pred, actual) {
   return(rmse)
 }
 
-#' @describeIn rmse Mean Absolute Percent Error
+#' @describeIn stats Mean Absolute Percent Error
 #' @export
 mape <- function(pred, actual) {
   length_error(pred, actual)
