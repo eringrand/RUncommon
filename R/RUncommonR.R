@@ -2,7 +2,6 @@
 #'
 #' @docType package
 #' @name RUncommon
-#' @importFrom dplyr %>%
 #' @importFrom stats "qnorm"
 #' @keywords internal
 NULL
