@@ -54,8 +54,8 @@ mostly taken from https://stackoverflow.com/questions/7549694/adding-regression-
 library(dplyr)
 library(ggplot2)
 iris \%>\%
-   ggplot(aes(x = Sepal.Width, y = Petal.Width, color = Species)) +
-   geom_point() +
-   stat_smooth_func(geom = "text", method = "lm", parse = TRUE, hjust = 0) +
-   facet_wrap(~Species)
+  ggplot(aes(x = Sepal.Width, y = Petal.Width, color = Species)) +
+  geom_point() +
+  stat_smooth_func(geom = "text", method = "lm", parse = TRUE, hjust = 0) +
+  facet_wrap(~Species)
 }

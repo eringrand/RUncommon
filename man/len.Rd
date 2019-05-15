@@ -13,7 +13,7 @@ len(x)
 For similarity between Python and R.  Returns the length of a vector.
 }
 \examples{
- library(RUncommon)
+library(RUncommon)
 x <- 1:5
 len(x)
 }

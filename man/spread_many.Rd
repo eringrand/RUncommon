@@ -33,12 +33,11 @@ library(dplyr)
 library(tidyr)
 
 fruits <- data.frame(
-    case = c(1, 1, 2, 2),
-    fruit = rep(c("Apple", "Orange"), 2),
-    height = rnorm(4, 0, 1),
-    width = rnorm(4, 0, 2)
+  case = c(1, 1, 2, 2),
+  fruit = rep(c("Apple", "Orange"), 2),
+  height = rnorm(4, 0, 1),
+  width = rnorm(4, 0, 2)
 )
 
 spread_many(fruits, fruit, width, height)
-
 }

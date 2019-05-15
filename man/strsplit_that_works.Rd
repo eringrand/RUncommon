@@ -21,10 +21,11 @@ Returns only the part of a string as designated by entity_requested
 }
 \examples{
 \dontrun{
-   try <- ("1_2_3_4")
-   strsplit_that_works(try, 1, split = "_")
+try <- ("1_2_3_4")
+strsplit_that_works(try, 1, split = "_")
 
-   library(tidyverse)
-   mutate(tidyr::table3, map_chr(rate, first_part = strsplit_that_works, 1, split = "/")
+library(tidyverse)
+tidyr::table3 \%>\%
+  mutate(map_chr(rate, first_part = strsplit_that_works, 1, split = "/"))
 }
 }
