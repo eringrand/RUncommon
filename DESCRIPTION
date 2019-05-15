@@ -3,7 +3,7 @@ Title: Erin's Personal Package
 Version: 1.0.0
 Authors@R: c(person("Erin", "Grand", email = "eringrand@gmail.com", role = "cre"))
 Description: This package contains useful functions and styles for my work at Uncommon Schools.
-Depends: R (>= 3.3.1)
+Depends: R (>= 3.3.0)
 Imports:
     dplyr,
     tidyr,
