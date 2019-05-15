@@ -2,6 +2,25 @@
 #' @export
 #' @description mostly taken from https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
 
+#' @param mapping mapping
+#' @param data data
+#' @param geom geom
+#' @param position pos
+#' @param ... extra
+#' @param method method
+#' @param formula form
+#' @param se se
+#' @param n n
+#' @param span span
+#' @param fullrange full
+#' @param level lev
+#' @param method.args x
+#' @param na.rm na.rm
+#' @param show.legend y
+#' @param inherit.aes z
+#' @param xpos a
+#' @param ypos b
+#'
 #' @examples
 #' library(dplyr)
 #' library(ggplot2)
@@ -11,8 +30,10 @@
 #'    stat_smooth_func(geom = "text", method = "lm", parse = TRUE, hjust = 0) +
 #'    facet_wrap(~Species)
 
-stat_smooth_func <- function(mapping = NULL, data = NULL,
-                             geom = "smooth", position = "identity",
+stat_smooth_func <- function(mapping = NULL,
+                             data = NULL,
+                             geom = "smooth",
+                             position = "identity",
                              ...,
                              method = "auto",
                              formula = y ~ x,

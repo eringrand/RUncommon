@@ -8,11 +8,19 @@ spread_many(data, key_col, ..., fill = NA, convert = TRUE,
   drop = TRUE, sep = "_")
 }
 \arguments{
+\item{data}{data}
+
+\item{key_col}{key_col}
+
 \item{...}{List of column, unquoted to spread out}
 
-\item{df}{Data Frame}
+\item{fill}{fill}
 
-\item{key}{Key column used in spread}
+\item{convert}{convert}
+
+\item{drop}{drop}
+
+\item{sep}{sep}
 }
 \value{
 data frame with new columns

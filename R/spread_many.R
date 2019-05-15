@@ -1,10 +1,14 @@
 #' spread_many
 #'
 #' Spread more than one column out at once
-#'
-#' @param df Data Frame
-#' @param key Key column used in spread
+
+#' @param data data
+#' @param key_col key_col
 #' @param ... List of column, unquoted to spread out
+#' @param fill fill
+#' @param convert convert
+#' @param drop drop
+#' @param sep sep
 #'
 #' @return data frame with new columns
 #' @examples

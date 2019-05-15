@@ -10,6 +10,43 @@ stat_smooth_func(mapping = NULL, data = NULL, geom = "smooth",
   level = 0.95, method.args = list(), na.rm = FALSE,
   show.legend = NA, inherit.aes = TRUE, xpos = NULL, ypos = NULL)
 }
+\arguments{
+\item{mapping}{mapping}
+
+\item{data}{data}
+
+\item{geom}{geom}
+
+\item{position}{pos}
+
+\item{...}{extra}
+
+\item{method}{method}
+
+\item{formula}{form}
+
+\item{se}{se}
+
+\item{n}{n}
+
+\item{span}{span}
+
+\item{fullrange}{full}
+
+\item{level}{lev}
+
+\item{method.args}{x}
+
+\item{na.rm}{na.rm}
+
+\item{show.legend}{y}
+
+\item{inherit.aes}{z}
+
+\item{xpos}{a}
+
+\item{ypos}{b}
+}
 \description{
 mostly taken from https://stackoverflow.com/questions/7549694/adding-regression-line-equation-and-r2-on-graph
 }
