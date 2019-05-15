@@ -5,7 +5,9 @@ output: github_document
 
 A package of personal functions I use at work or in my personal projects. The functions are based in tidyverse style and therefor many tidyverse packages and functions are required or suggested. 
 
-To download this package for your own use, type.
+This package is mirrored on both gitlab and github, so you can install from either location.
+
+To download this package for your own use copy the following lines into the R console. 
 
 ```r
 devtools::install_git("eringrand/RUncommon")
