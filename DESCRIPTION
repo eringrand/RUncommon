@@ -29,5 +29,6 @@ Suggests:
     jsonlite,
     stats,
     testthat (>= 2.1.0),
-    roxygen2
+    roxygen2,
+    covr
 VignetteBuilder: knitr
