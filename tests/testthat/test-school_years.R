@@ -9,7 +9,7 @@ test_that("SY - 20 conversion works", {
 # Change school year
 test_that("change_school_year", {
   expect_equal(change_school_year("2018-2019"), "2018-19")
-  expect_error(change_school_year("2018-19"))
+  expect_error(change_school_year("2018-19"), regex = "school_year is not in the form 20XX-20YY")
 })
 
 # sy_form
@@ -21,8 +21,8 @@ test_that("sy_from", {
 })
 
 test_that("sy_from string too big", {
-  expect_error(sy_form("2015-16"))
-  expect_error(sy_form(15))
+  expect_error(sy_form("2015-16"), regex = "school_year is not a number in the form XXXX")
+  expect_error(sy_form(15), regex = "school_year is not a number in the form XXXX")
 })
 
 

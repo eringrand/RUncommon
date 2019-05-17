@@ -46,41 +46,6 @@ tochar <- function(x) {
 }
 
 
-
-#' @title colorgorical
-#' @description uses Colorgoical to create color paletes that work well.
-#' Requires httr and jsonlite packages.
-#' @param n number of colors in the palette. deafults to 10
-#' Credit to \href{https://gist.github.com/slowkow/22daea426607416bfcd573ce9cbd89ab}{slowkrow}
-#'  @export
-
-colorgorical <- function(n = 10) {
-  post_body <- jsonlite::toJSON(
-    auto_unbox = TRUE,
-    list(
-      "paletteSize" = n,
-      "weights" = list(
-        "ciede2000" = 0,
-        "nameDifference" = 0,
-        "nameUniqueness" = 0,
-        "pairPreference" = 0
-      ),
-      "hueFilters" = list(),
-      "lightnessRange" = c("25", "85"),
-      "startPalette" = list()
-    )
-  )
-  retval <- httr::POST(
-    url = "http://vrl.cs.brown.edu/color/makePalette",
-    body = post_body
-  )
-  retval <- httr::content(retval)
-  return(sapply(retval$palette, function(x) {
-    sprintf("rgb(%s,%s,%s)", x[[1]], x[[2]], x[[3]])
-  }))
-}
-
-
 #' Cohort Tag
 #' @description Defines a student's cohort given the student's grade and current school year.
 #'
@@ -88,7 +53,7 @@ colorgorical <- function(n = 10) {
 #' e.g If today's date is Jan 10, 2017, the default year will be 2017,
 #' however if the current date is Sep 10, 2017, the year will default to 2018.
 #'
-#' @param grade Enrolled grade of the student
+#' @param grade Enrolled grade of the student  (0 - 12)
 #' @param school_year School year either in 20XX-YY or 20XX (spring) format.
 #' @examples
 #' library(RUncommon)
@@ -97,6 +62,9 @@ colorgorical <- function(n = 10) {
 #' @export
 
 cohort <- function(grade, school_year = "") {
+  if(!is.numeric(grade)) stop("Grade must be a number.")
+  if(grade > 12 | grade < 0) stop("Grade is not a real grade.")
+
   years_to_grade <- 12 - as.numeric(grade)
 
   if (all(school_year == "")) {
@@ -152,6 +120,7 @@ change_firstlast_to_lastfirst <- function(name) {
 #' so that you can have 20% or 20.5% as needed.
 #' @param x a numeric vector to format
 #' @param dig the number of digits after the percent to round. Default to 1.
+#' @example round_percent(.24601, dig = 0)
 #' @export
 
 round_percent <- function(x, dig = 1) {
@@ -171,7 +140,7 @@ round_percent <- function(x, dig = 1) {
 
 cols_with_nas <- function(data) {
   new_data <- tidyr::gather(data, key = "key", value = "value") %>%
-    dplyr::filter(is.na(value))
+    dplyr::filter(is.na(value)) %>%
 
   if (nrow(new_data) != 0) {
     new_data <- dplyr::count(new_data, key)

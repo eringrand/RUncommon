@@ -7,7 +7,7 @@
 cohort(grade, school_year = "")
 }
 \arguments{
-\item{grade}{Enrolled grade of the student}
+\item{grade}{Enrolled grade of the student  (0 - 12)}
 
 \item{school_year}{School year either in 20XX-YY or 20XX (spring) format.}
 }
