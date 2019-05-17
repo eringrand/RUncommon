@@ -30,5 +30,6 @@ Suggests:
     stats,
     testthat (>= 2.1.0),
     roxygen2,
-    covr
+    covr,
+    scales
 VignetteBuilder: knitr
