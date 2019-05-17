@@ -18,6 +18,8 @@ building:
 
 testing:
     stage: test
+    dependencies:
+        - building
     allow_failure: false
     when: on_success
     only:
