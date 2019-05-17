@@ -45,6 +45,5 @@ spread_many <- function(data,
       fill = fill, convert = convert,
       drop = drop,
       sep = NULL
-    ) %>%
-    tibble::as_tibble()
+    )
 }
