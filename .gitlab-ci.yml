@@ -10,8 +10,6 @@ building:
   script:
     - R -e "remotes::install_deps(dependencies = T)"
     - R -e 'devtools::check()'
-    - R CMD build . --no-build-vignettes --no-manual
-    - R CMD check *tar.gz --no-build-vignettes --no-manual
 
 # To have the converage percentge appear as a gitlab badge follow these instructions
 # https://docs.gitlab.com/ee/user/project/pipelines/settings.html#test-coverage-parsing
@@ -26,7 +24,7 @@ testing:
         - master
     script:
         - Rscript -e 'install.packages("DT")'
-        - Rscript -e 'cc <- covr::package_coverage(); cat("Code coverage:", paste0(format(covr::percent_coverage(cc), nsmall = 1),"%"))'
+        - Rscript -e 'cc <- covr::package_coverage(Sys.getenv("CI_PROJECT_DIR")); cat("Code coverage:", paste0(format(covr::percent_coverage(cc), nsmall = 1),"%"))'
     artifacts:
         paths:
             - public

@@ -170,7 +170,7 @@ round_percent <- function(x, dig = 1) {
 #' @export
 
 cols_with_nas <- function(data) {
-  new_data <- tidyr::gather(data) %>%
+  new_data <- tidyr::gather(data, key = "key", value = "value") %>%
     dplyr::filter(is.na(value))
 
   if (nrow(new_data) != 0) {
