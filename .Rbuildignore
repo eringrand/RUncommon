@@ -5,3 +5,6 @@
 ^\.github$
 ^\.gitlab-ci\.yml$
 ^README\.Rmd$
+CODE_OF_CONDUCT.md
+LICENSE.md
+docs
