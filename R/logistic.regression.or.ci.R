@@ -7,7 +7,7 @@
 #' This version accommodates multiple regression parameters
 #'
 #' @param regress.out logistic regression output
-#' @param level level to test at, deafult is 0.95
+#' @param level level to test at, default is 0.95
 #'
 #' @export
 

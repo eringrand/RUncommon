@@ -9,7 +9,7 @@
 \alias{fpr}
 \alias{fnr}
 \alias{cls_acc}
-\title{Statiscs Functions}
+\title{Statistics Functions}
 \usage{
 rmse(pred, actual)
 
@@ -33,7 +33,7 @@ cls_acc(pred, actual)
 \item{actual}{vector of actual values}
 }
 \description{
-Statiscs Functions
+Statistics Functions
 }
 \section{Functions}{
 \itemize{

@@ -11,10 +11,10 @@ strsplit_that_works(cell, entity_requested, split = "_")
 
 \item{entity_requested}{a number representing the}
 
-\item{split}{split used in strplit Default: '_'}
+\item{split}{split used in strsplit Default: '_'}
 }
 \description{
-We got tired of having to work with spliting strings in weird ways.
+We got tired of having to work with splitting strings in weird ways.
 }
 \details{
 Returns only the part of a string as designated by entity_requested

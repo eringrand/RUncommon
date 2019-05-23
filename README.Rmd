@@ -18,7 +18,7 @@ GitHub:
 remotes::install_git("eringrand/RUncommon")
 library(RUncommon)
 ```
-Gitlab:
+gitlab:
 ```r
 remotes::install_gitlab("eringrand/RUncommon")
 library(RUncommon)

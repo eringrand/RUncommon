@@ -9,7 +9,7 @@ logistic.regression.or.ci(regress.out, level = 0.95)
 \arguments{
 \item{regress.out}{logistic regression output}
 
-\item{level}{level to test at, deafult is 0.95}
+\item{level}{level to test at, default is 0.95}
 }
 \description{
 This function takes the output from a glm

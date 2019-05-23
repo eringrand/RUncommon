@@ -1,8 +1,8 @@
 #' @title strsplit_that_works
-#' @description We got tired of having to work with spliting strings in weird ways.
+#' @description We got tired of having to work with splitting strings in weird ways.
 #' @param cell the string you want to split
 #' @param entity_requested a number representing the
-#' @param split split used in strplit Default: '_'
+#' @param split split used in strsplit Default: '_'
 #' @details Returns only the part of a string as designated by entity_requested
 #' @examples
 #' \dontrun{

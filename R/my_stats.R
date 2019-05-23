@@ -3,7 +3,7 @@ length_error <- function(pred, actual) {
     stop("pred and actual are not the same length")
 }
 
-#' @title Statiscs Functions
+#' @title Statistics Functions
 #' @param pred vector of predictions
 #' @param actual vector of actual values
 #' @describeIn stats root mean standard error

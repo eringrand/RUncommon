@@ -31,5 +31,7 @@ Suggests:
     testthat (>= 2.1.0),
     roxygen2,
     covr,
-    scales
+    scales,
+    spelling
 VignetteBuilder: knitr
+Language: en-US

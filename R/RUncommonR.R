@@ -1,4 +1,4 @@
-#' RUncommon is my personal supply of functions that I use often enough not to want to rewrite everytime
+#' RUncommon is my personal supply of functions that I use often enough not to want to rewrite
 #'
 #' @docType package
 #' @name RUncommon
