@@ -43,3 +43,4 @@ Temporary Items
 R/*.nb.html
 *.Rproj
 .Rbuildignore
+inst/doc
