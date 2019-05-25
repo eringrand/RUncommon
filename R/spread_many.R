@@ -34,7 +34,7 @@ spread_many <- function(data,
                         sep = "_") {
   key_quo <- rlang::enquo(key_col)
   val_quos <- rlang::quos(...)
-  value_cols <- unname(tidyselect::vars_select(names(data), !!!val_quos))
+  # value_cols <- unname(tidyselect::vars_select(names(data), !!!val_quos))
   key_col <- rlang::quo_name(key_quo)
 
   data %>%

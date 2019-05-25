@@ -1,4 +1,3 @@
-
 #' @title colorgorical
 #' @description uses colorgorical to create color palettes that work well.
 #' Requires httr and jsonlite packages.

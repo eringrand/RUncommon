@@ -1,6 +1,7 @@
 length_error <- function(pred, actual) {
-  if (length(pred) != length(actual))
+  if (length(pred) != length(actual)) {
     stop("pred and actual are not the same length")
+  }
 }
 
 #' @title Statistics Functions

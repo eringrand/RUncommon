@@ -16,6 +16,6 @@ A version of scales::percent() that allows for rounded digit
 so that you can have 20% or 20.5% as needed.
 }
 \examples{
- round_percent(.24601)
- round_percent(.24601, dig = 0)
+round_percent(.24601)
+round_percent(.24601, dig = 0)
 }

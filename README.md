@@ -8,11 +8,11 @@ status](https://gitlab.com/eringrand/RUncommon/badges/master/pipeline.svg)](http
 report](https://gitlab.com/eringrand/RUncommon/badges/master/coverage.svg)](https://gitlab.com/eringrand/RUncommon/commits/master)
 
 A package of personal functions I use at work or in my personal
-projects. The functions are based in tidyverse style and therefor many
-tidyverse packages and functions are required or suggested.
+projects. The functions are based in tidyverse style
 
-This package is mirrored on both gitlab and github, so you can install
-from either location.
+This package is mirrored from gitlab to github. You can install from
+either location, but please pass any pull/merge requests to the gitlab
+version.
 
 To download this package for your own use copy the following lines into
 the R console.

@@ -6,8 +6,11 @@
 \usage{
 create_colname_lookup(df)
 }
+\arguments{
+\item{df}{a dataframe}
+}
 \description{
-This creates a lookup table from columns that are automatically 
+This creates a lookup table from columns that are automatically
 named according to the scheme apple_1, apple_2, banana_3, banana_4 to
 apple, apple_1, banana, banana_1
 }

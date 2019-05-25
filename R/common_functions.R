@@ -62,14 +62,12 @@ tochar <- function(x) {
 #' @export
 
 cohort <- function(grade, school_year = "") {
-  if(any(!is.numeric(grade))) stop("Grade must be a number.")
-  if(any(grade > 12 | grade < 0)) stop("Grade is not a real grade.")
+  if (any(!is.numeric(grade))) stop("Grade must be a number.")
+  if (any(grade > 12 | grade < 0)) stop("Grade is not a real grade.")
 
   years_to_grad <- 12 - as.numeric(grade)
 
   if (all(school_year == "")) {
-    month_of_year <- format(Sys.Date(), "%m")
-
     # uses two functions from school_year.R
     current_year <- sy_number(school_year_from_date())
   }
@@ -119,12 +117,12 @@ change_firstlast_to_lastfirst <- function(name) {
 #' @param x a numeric vector to format
 #' @param dig the number of digits after the percent to round. Default to 1.
 #' @examples
-#'  round_percent(.24601)
-#'  round_percent(.24601, dig = 0)
+#' round_percent(.24601)
+#' round_percent(.24601, dig = 0)
 #' @export
 
 round_percent <- function(x, dig = 1) {
-  if(x > 1) stop("Percents cannot be larger than one.")
+  if (x > 1) stop("Percents cannot be larger than one.")
   paste0(round(x * 100, digits = dig), "%")
 }
 
@@ -142,10 +140,9 @@ round_percent <- function(x, dig = 1) {
 cols_with_nas <- function(data) {
   new_data <- tidyr::gather(data, key = "key", value = "value") %>%
     dplyr::filter(is.na(value)) %>%
-
-  if (nrow(new_data) != 0) {
-    new_data <- dplyr::count(new_data, key)
-  }
+    if (nrow(new_data) != 0) {
+      new_data <- dplyr::count(new_data, key)
+    }
 
   return(new_data)
 }
