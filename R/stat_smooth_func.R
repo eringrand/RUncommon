@@ -134,18 +134,15 @@ StatSmoothFunc <- ggplot2::ggproto(
     model <- do.call(method, c(base.args, method.args))
 
     m <- model
-    # eq <- substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2,
-    #                  list(a = format(coef(m)[1], digits = 3),
-    #                       b = format(coef(m)[2], digits = 3),
-    #                       r2 = format(summary(m)$r.squared, digits = 3)))
-    eq <- substitute(
+
+        eq <- substitute(
       italic(r)^2 ~ "=" ~ r2,
       list(r2 = format(summary(m)$r.squared, digits = 3))
     )
     func_string <- as.character(as.expression(eq))
 
-    if (is.null(xpos)) xpos <- min(data$x) * 0.9
-    if (is.null(ypos)) ypos <- max(data$y) * 0.9
+    if (is.null(xpos)) xpos <- min(data$x) * 0.95
+    if (is.null(ypos)) ypos <- max(data$y) * 0.95
     data.frame(x = xpos, y = ypos, label = func_string)
   },
 
