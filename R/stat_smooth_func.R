@@ -29,6 +29,8 @@
 #'   geom_point() +
 #'   stat_smooth_func(geom = "text", method = "lm", parse = TRUE, hjust = 0) +
 #'   facet_wrap(~Species)
+
+
 stat_smooth_func <- function(mapping = NULL,
                              data = NULL,
                              geom = "smooth",
@@ -47,7 +49,7 @@ stat_smooth_func <- function(mapping = NULL,
                              inherit.aes = TRUE,
                              xpos = NULL,
                              ypos = NULL) {
-  layer(
+  ggplot2::layer(
     data = data,
     mapping = mapping,
     stat = StatSmoothFunc,
