@@ -23,8 +23,8 @@ create_colname_lookup <- function(df) {
       field_rank = dplyr::dense_rank(number_at_end),
       formatted_rank = dplyr::if_else(
         field_rank == 1, "",
-        stingr::str_c("_", as.character(field_rank - 1))),
-      new_colname = stingr::str_c(field, formatted_rank),
+        stringr::str_c("_", as.character(field_rank - 1))),
+      new_colname = stringr::str_c(field, formatted_rank),
       lookup_name = dplyr::coalesce(new_colname, colname)
       ) %>%
     dplyr::ungroup() %>%
