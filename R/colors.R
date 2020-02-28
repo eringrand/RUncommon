@@ -1,7 +1,7 @@
 #' @title colorgorical
 #' @description uses colorgorical to create color palettes that work well.
 #' Requires httr and jsonlite packages.
-#' @param n number of colors in the palette. defaults to 10
+#' @param n number of colors in the color palette. defaults to 10
 #' Credit to \href{https://gist.github.com/slowkow/22daea426607416bfcd573ce9cbd89ab}{slowkrow}
 #'  @export
 
