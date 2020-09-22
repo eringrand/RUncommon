@@ -27,7 +27,7 @@ sy_number <- function(school_year, before_2000 = FALSE) {
 #' @examples
 #' change_school_year("2014-2015")
 change_school_year <- function(school_year) {
-  if (stringr::str_length(school_year) != 9) stop("school_year is not in the form 20XX-20YY")
+  if (stringr::str_length(school_year) < 9) stop("school_year is not in the form 20XX-20YY")
 
   first_year <- stringr::str_sub(school_year, 1, 4)
   second_year <- stringr::str_sub(school_year, -2, -1)
