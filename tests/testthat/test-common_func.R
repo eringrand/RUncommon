@@ -25,6 +25,6 @@ test_that("round_percent", {
   expect_equal(round_percent(.24601), "24.6%")
   expect_equal(round_percent(.24601, dig = 0), "25%")
   expect_equal(round_percent(.24601, 0), "25%")
-  expect_equal(round_percent(.58932), scales::percent(.58932))
+  expect_equal(round_percent(.58932, dig = 0), scales::percent(.58932))
   expect_error(round_percent(1.2))
 })

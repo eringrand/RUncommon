@@ -6,6 +6,11 @@
 \usage{
 age(birthdate, as_of_date = NULL)
 }
+\arguments{
+\item{birthdate}{birthday in the form YMD}
+
+\item{as_of_date}{current day in the form YMD, default is today}
+}
 \value{
 age
 }

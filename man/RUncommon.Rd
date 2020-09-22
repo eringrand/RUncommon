@@ -4,4 +4,7 @@
 \name{RUncommon}
 \alias{RUncommon}
 \title{RUncommon is my personal supply of functions that I use often enough not to want to rewrite}
+\description{
+internal
+}
 \keyword{internal}
