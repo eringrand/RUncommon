@@ -1,5 +1,5 @@
 #' @title age
-#' @description Calculate someone's age based on their birthdate and a provided date
+#' @description Calculate someone's age based on their birthday and a provided date
 #' @param birthdate
 #' @param as_of_date
 #' @return age

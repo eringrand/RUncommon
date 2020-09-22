@@ -10,5 +10,5 @@ age(birthdate, as_of_date = NULL)
 age
 }
 \description{
-Calculate someone's age based on their birthdate and a provided date
+Calculate someone's age based on their birthday and a provided date
 }
