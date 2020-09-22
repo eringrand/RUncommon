@@ -7,7 +7,7 @@
 colorgorical(n = 10)
 }
 \arguments{
-\item{n}{number of colors in the palette. defaults to 10
+\item{n}{number of colors in the color palette. defaults to 10
 Credit to \href{https://gist.github.com/slowkow/22daea426607416bfcd573ce9cbd89ab}{slowkrow}
  @export}
 }

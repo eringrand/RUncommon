@@ -4,8 +4,15 @@
 \alias{spread_many}
 \title{spread_many}
 \usage{
-spread_many(data, key_col, ..., fill = NA, convert = TRUE,
-  drop = TRUE, sep = "_")
+spread_many(
+  data,
+  key_col,
+  ...,
+  fill = NA,
+  convert = TRUE,
+  drop = TRUE,
+  sep = "_"
+)
 }
 \arguments{
 \item{data}{data}

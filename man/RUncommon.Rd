@@ -3,9 +3,5 @@
 \docType{package}
 \name{RUncommon}
 \alias{RUncommon}
-\alias{RUncommon-package}
 \title{RUncommon is my personal supply of functions that I use often enough not to want to rewrite}
-\description{
-RUncommon is my personal supply of functions that I use often enough not to want to rewrite
-}
 \keyword{internal}
